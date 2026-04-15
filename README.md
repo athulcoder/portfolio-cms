@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Unified Portfolio CMS
 
-## Getting Started
+A centralized content management system designed to manage and synchronize personal professional data such as skills and projects across multiple platforms.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This project currently provides a basic interface to:
+- Add and manage skills
+- Add and manage projects
+- View stored data dynamically
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The system is being developed with the intention of evolving into a centralized data source for all professional platforms.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Objective
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The primary goal is to establish a single source of truth for personal and professional information that can be reused across:
 
-## Learn More
+- Portfolio website
+- Resume / CV
+- LinkedIn and other professional platforms
 
-To learn more about Next.js, take a look at the following resources:
+This ensures consistency, reduces redundancy, and eliminates the need to manually update multiple platforms.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Problem Statement
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Maintaining consistency across multiple platforms is difficult due to:
+- Repetitive manual updates
+- Inconsistent descriptions of skills and projects
+- Risk of outdated or missing information
 
-## Deploy on Vercel
+This system aims to solve these issues by centralizing data management.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Current Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Add new skills
+- Add new projects
+- View existing skills and projects
+- Dynamic rendering of stored data
+
+## Planned Features
+
+- Authentication and access control
+- API layer for external consumption (portfolio, resume, etc.)
+- Structured schema for skills, projects, and metadata
+- Export functionality (JSON, PDF for resumes)
+- Tagging and categorization
+- Versioning of data
+- Integration support for third-party platforms (where APIs are available)
+
+## Architecture (Planned)
+
+The system will act as a central backend that exposes data to multiple clients:
+
+        CMS Core (API + Database)
+                  |
+        -------------------------
+        |     |       |        |
+   Portfolio  Resume  LinkedIn  Others
+
+All client applications will consume data from the CMS to ensure synchronization.
+
+## Tech Stack
+
+Current:
+- Frontend: React / Next.js
+
+Planned:
+- Backend: Next.js API routes or Node.js
+- Database: PostgreSQL or MongoDB
+- Deployment: Vercel or cloud-based infrastructure
+
+## Long-Term Direction
+
+The system is intended to evolve into a centralized personal data platform where updates made in one place propagate across all connected platforms.
+
+## License
+
+MIT License
